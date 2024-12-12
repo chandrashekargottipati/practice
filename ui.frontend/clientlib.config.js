@@ -14,27 +14,27 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-const path = require('path');
+const path = require("path");
 
-const BUILD_DIR = path.join(__dirname, 'dist');
+const BUILD_DIR = path.join(__dirname, "dist");
 const CLIENTLIB_DIR = path.join(
   __dirname,
-  '..',
-  'ui.apps',
-  'src',
-  'main',
-  'content',
-  'jcr_root',
-  'apps',
-  'practice',
-  'clientlibs'
+  "..",
+  "ui.apps",
+  "src",
+  "main",
+  "content",
+  "jcr_root",
+  "apps",
+  "practice",
+  "clientlibs"
 );
 
 const libsBaseConfig = {
   allowProxy: true,
-  serializationFormat: 'xml',
-  cssProcessor: ['default:none', 'min:none'],
-  jsProcessor: ['default:none', 'min:none']
+  serializationFormat: "xml",
+  cssProcessor: ["default:none", "min:none"],
+  jsProcessor: ["default:none", "min:none"],
 };
 
 // Config for `aem-clientlib-generator`
@@ -44,50 +44,50 @@ module.exports = {
   libs: [
     {
       ...libsBaseConfig,
-      name: 'clientlib-dependencies',
-      categories: ['practice.dependencies'],
+      name: "clientlib-dependencies",
+      categories: ["practice.dependencies"],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: 'clientlib-dependencies',
-          files: ['**/*.js'],
-          flatten: false
+          cwd: "clientlib-dependencies",
+          files: ["**/*.js"],
+          flatten: false,
         },
         css: {
-          cwd: 'clientlib-dependencies',
-          files: ['**/*.css'],
-          flatten: false
-        }
-      }
+          cwd: "clientlib-dependencies",
+          files: ["**/*.css"],
+          flatten: false,
+        },
+      },
     },
     {
       ...libsBaseConfig,
-      name: 'clientlib-site',
-      categories: ['practice.site'],
-      dependencies: ['practice.dependencies'],
+      name: "clientlib-site",
+      categories: ["practice.site"],
+      dependencies: ["practice.dependencies"],
       assets: {
         // Copy entrypoint scripts and stylesheets into the respective ClientLib
         // directories
         js: {
-          cwd: 'clientlib-site',
-          files: ['**/*.js'],
-          flatten: false
+          cwd: "clientlib-site",
+          files: ["**/*.js"],
+          flatten: false,
         },
         css: {
-          cwd: 'clientlib-site',
-          files: ['**/*.css'],
-          flatten: false
+          cwd: "clientlib-site",
+          files: ["**/*.css"],
+          flatten: false,
         },
 
         // Copy all other files into the `resources` ClientLib directory
         resources: {
-          cwd: 'clientlib-site',
-          files: ['**/*.*'],
+          cwd: "clientlib-site",
+          files: ["**/*.*"],
           flatten: false,
-          ignore: ['**/*.js', '**/*.css']
-        }
-      }
-    }
-  ]
+          ignore: ["**/*.js", "**/*.css"],
+        },
+      },
+    },
+  ],
 };

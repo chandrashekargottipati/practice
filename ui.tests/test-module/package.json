@@ -24,5 +24,8 @@
     "test-firefox": "cypress run --browser firefox"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress-eaas": "file:"
+  }
 }
