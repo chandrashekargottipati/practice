@@ -1,123 +1,593 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <title>Static Frontend file</title>
-    <meta name="template" content="page-content"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="/etc.clientlibs/practice/clientlibs/clientlib-base.css" type="text/css">
-    <script type="text/javascript" src="/etc.clientlibs/practice/clientlibs/clientlib-dependencies.js"></script>
-    <link rel="stylesheet" href="/etc.clientlibs/practice/clientlibs/clientlib-dependencies.css" type="text/css">
-</head>
-<body class="page basicpage">
-<div class="root container responsivegrid">
-    <div class="cmp-container">
-        <header class="experiencefragment">
-            <div class="cmp-experiencefragment">
-                <div class="cmp-container">
-                    <div class="navigation">
-                        <nav class="cmp-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-                            <ul class="cmp-navigation__group">
-                                <li class="cmp-navigation__item cmp-navigation__item--level-0 cmp-navigation__item--active">
-                                    <a href="/content/practice/us/en.html" title="PRACTICE Sites Project" aria-current="page" class="cmp-navigation__item-link">PRACTICE Sites Project</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="languagenavigation">
-                        <nav class="cmp-languagenavigation">
-                            <ul class="cmp-languagenavigation__group">
-                                <li class="cmp-languagenavigation__item cmp-languagenavigation__item--langcode-en cmp-languagenavigation__item--level-0">
-                                    <span class="cmp-languagenavigation__item-title" lang="en">United States</span>
-                                    <ul class="cmp-languagenavigation__group">
-                                        <li class="cmp-languagenavigation__item cmp-languagenavigation__item--langcode-en cmp-languagenavigation__item--level-1">
-                                            <a class="cmp-languagenavigation__item-link" href="/content/practice/us/en.html" hreflang="en" lang="en" rel="alternate" title="English">English</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="search">
-                        <section class="cmp-search" role="search" data-cmp-is="search" data-cmp-min-length="3" data-cmp-results-size="10">
-                            <form class="cmp-search__form" data-cmp-hook-search="form" method="get" action="/content/practice/us/en.searchresults.json/_jcr_content/root/search" autocomplete="off">
-                                <div class="cmp-search__field">
-                                    <i class="cmp-search__icon" data-cmp-hook-search="icon"></i>
-                                    <span class="cmp-search__loading-indicator" data-cmp-hook-search="loadingIndicator"></span>
-                                    <input class="cmp-search__input" data-cmp-hook-search="input" type="text" name="fulltext" placeholder="Search" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false"/>
-                                    <button class="cmp-search__clear" data-cmp-hook-search="clear">
-                                        <i class="cmp-search__clear-icon"></i>
-                                    </button>
-                                </div>
-                            </form>
-                            <div class="cmp-search__results" data-cmp-hook-search="results" role="listbox" aria-multiselectable="false"></div>
-                            <script data-cmp-hook-search="itemTemplate" type="x-template">
-                                <a class="cmp-search__item" data-cmp-hook-search="item">
-                                    <span class="cmp-search__item-title" data-cmp-hook-search="itemTitle"></span>
-                                </a>
-                            </script>
-                        </section></div>
-                </div>
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRACTICE Sites Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="h-full">
+    <header>
+      <nav
+        class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800"
+      >
+        <div
+          class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"
+        >
+          <a href="https://flowbite.com" class="flex items-center">
+            <img
+              src="https://flowbite.com/docs/images/logo.svg"
+              class="mr-3 h-6 sm:h-9"
+              alt="Flowbite Logo"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              >Flowbite</span
+            >
+          </a>
+          <div class="flex items-center lg:order-2">
+            <a
+              href="#"
+              class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+              >Log in</a
+            >
+            <a
+              href="#"
+              class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+              >Get started</a
+            >
+            <button
+              data-collapse-toggle="mobile-menu-2"
+              type="button"
+              class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="mobile-menu-2"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <svg
+                class="hidden w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div
+            class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  >Company</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  >Marketplace</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="min-h-screen bg-gray-100">
+      <!-- Header Section -->
+      <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-6">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <a href="/" class="text-xl font-bold text-gray-800"
+                >PRACTICE Sites</a
+              >
             </div>
-        </header>
-        <main class="container responsivegrid">
-            <div class="cmp-container">
-                <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                    <div class="title aem-GridColumn aem-GridColumn--default--12">
-                        <div class="cmp-title">
-                            <h1 class="cmp-title__text">Welcome to PRACTICE Sites Project!</h1>
-                        </div>
-                    </div>
-                    <div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
-                        <div class="cmp-container">
-                            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
-                                <div class="text aem-GridColumn aem-GridColumn--default--12">
-                                    <div class="cmp-text">
-                                        <p>This is the main welcome page of your web site. A few notes about this site:</p>
-                                        <ul>
-                                            <li>It is built entirely with the Core Components - see the <a href="https://www.adobe.com/go/aem_cmp_library">Component Library</a> to view the components in all their shapes and forms.</li>
-                                            <li>Only the Hello World component has been built custom to illustrate how further components can be built (which also shows how JavaScript is best initialized for components, so that it also works well with the Page Editor).</li>
-                                            <li>The page header and footer are assembled as Experience Fragments, which <a href="https://docs.adobe.com/content/help/en/experience-manager-core-components/using/components/experience-fragment.html#localized-site-structure">can also be localized if needed</a>.<br />
-                                            </li>
-                                            <li>The Style System is used to insert a sematic &lt;header&gt; and &lt;footer&gt; element to the corresponding Experience Fragment components, as well as a &lt;main&gt; element to the container of the page content. This allows to apply some CSS specifically to these sections of the page.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="helloworld aem-GridColumn aem-GridColumn--default--12"><div class="cmp-helloworld" data-cmp-is="helloworld">
-                                    <h2 class="cmp-helloworld__title">Hello World Component</h2>
-                                    <div class="cmp-helloworld__item">
-                                        <p class="cmp-helloworld__item-label">Model message:</p>
-                                        <pre class="cmp-helloworld__item-output" data-cmp-hook-helloworld="model">Hello World!
-Resource type is: practice/components/helloworld
-Current page is:  /content/practice/us/en
-This is instance: 78f60b4a-a52a-4021-82d5-fb17f5fb95cf
-</pre>
-                                    </div>
-                                </div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="hidden md:flex space-x-8">
+              <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+              <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
+              <a href="#" class="text-gray-600 hover:text-gray-900">Services</a>
+              <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
             </div>
-        </main>
-        <footer class="experiencefragment">
-            <div class="cmp-experiencefragment">
-                <div class="cmp-container">
-                    <div class="separator">
-                        <div class="cmp-separator">
-                            <hr class="cmp-separator__horizontal-rule"/>
-                        </div></div>
-                    <div class="text">
-                        <div class="cmp-text">
-                            <p>Copyright 2019, PRACTICE Sites Project. All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="md:hidden">
+              <button class="text-gray-600 hover:text-gray-900">
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  ></path>
+                </svg>
+              </button>
             </div>
-        </footer>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Main Content Section -->
+      <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <!-- Sidebar -->
+          <div class="md:col-span-3">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h2 class="text-lg font-semibold text-gray-800 mb-4">
+                Navigation
+              </h2>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900"
+                    >Projects</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900"
+                    >Reports</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-600 hover:text-gray-900"
+                    >Settings</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="md:col-span-9">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h1 class="text-2xl font-bold text-gray-800 mb-6">
+                Welcome to PRACTICE Sites Project
+              </h1>
+              <div class="prose max-w-none">
+                <p class="text-gray-600 leading-relaxed">
+                  This is the main content area where you can add your specific
+                  content. The layout is responsive and uses Tailwind CSS for
+                  styling.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div id="accordion-collapse" data-accordion="collapse">
+        <h2 id="accordion-collapse-heading-1">
+          <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+            data-accordion-target="#accordion-collapse-body-1"
+            aria-expanded="true"
+            aria-controls="accordion-collapse-body-1"
+          >
+            <span>What is Flowbite?</span>
+            <svg
+              data-accordion-icon
+              class="w-3 h-3 rotate-180 shrink-0"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          id="accordion-collapse-body-1"
+          class="hidden"
+          aria-labelledby="accordion-collapse-heading-1"
+        >
+          <div
+            class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+          >
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              Flowbite is an open-source library of interactive components built
+              on top of Tailwind CSS including buttons, dropdowns, modals,
+              navbars, and more.
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              Check out this guide to learn how to
+              <a
+                href="/docs/getting-started/introduction/"
+                class="text-blue-600 dark:text-blue-500 hover:underline"
+                >get started</a
+              >
+              and start developing websites even faster with components on top
+              of Tailwind CSS.
+            </p>
+          </div>
+        </div>
+        <h2 id="accordion-collapse-heading-2">
+          <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+            data-accordion-target="#accordion-collapse-body-2"
+            aria-expanded="false"
+            aria-controls="accordion-collapse-body-2"
+          >
+            <span>Is there a Figma file available?</span>
+            <svg
+              data-accordion-icon
+              class="w-3 h-3 rotate-180 shrink-0"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          id="accordion-collapse-body-2"
+          class="hidden"
+          aria-labelledby="accordion-collapse-heading-2"
+        >
+          <div
+            class="p-5 border border-b-0 border-gray-200 dark:border-gray-700"
+          >
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              Flowbite is first conceptualized and designed using the Figma
+              software so everything you see in the library has a design
+              equivalent in our Figma file.
+            </p>
+            <p class="text-gray-500 dark:text-gray-400">
+              Check out the
+              <a
+                href="https://flowbite.com/figma/"
+                class="text-blue-600 dark:text-blue-500 hover:underline"
+                >Figma design system</a
+              >
+              based on the utility classes from Tailwind CSS and components from
+              Flowbite.
+            </p>
+          </div>
+        </div>
+        <h2 id="accordion-collapse-heading-3">
+          <button
+            type="button"
+            class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+            data-accordion-target="#accordion-collapse-body-3"
+            aria-expanded="false"
+            aria-controls="accordion-collapse-body-3"
+          >
+            <span
+              >What are the differences between Flowbite and Tailwind UI?</span
+            >
+            <svg
+              data-accordion-icon
+              class="w-3 h-3 rotate-180 shrink-0"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5 5 1 1 5"
+              />
+            </svg>
+          </button>
+        </h2>
+        <div
+          id="accordion-collapse-body-3"
+          class="hidden"
+          aria-labelledby="accordion-collapse-heading-3"
+        >
+          <div
+            class="p-5 border border-t-0 border-gray-200 dark:border-gray-700"
+          >
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              The main difference is that the core components from Flowbite are
+              open source under the MIT license, whereas Tailwind UI is a paid
+              product. Another difference is that Flowbite relies on smaller and
+              standalone components, whereas Tailwind UI offers sections of
+              pages.
+            </p>
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              However, we actually recommend using both Flowbite, Flowbite Pro,
+              and even Tailwind UI as there is no technical reason stopping you
+              from using the best of two worlds.
+            </p>
+            <p class="mb-2 text-gray-500 dark:text-gray-400">
+              Learn more about these technologies:
+            </p>
+            <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
+              <li>
+                <a
+                  href="https://flowbite.com/pro/"
+                  class="text-blue-600 dark:text-blue-500 hover:underline"
+                  >Flowbite Pro</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://tailwindui.com/"
+                  rel="nofollow"
+                  class="text-blue-600 dark:text-blue-500 hover:underline"
+                  >Tailwind UI</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <img
+        class="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
+        src="/docs/images/people/profile-picture-5.jpg"
+        alt="Bordered avatar"
+      />
+
+      <div
+        class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
+      >
+        <svg
+          class="absolute w-12 h-12 text-gray-400 -left-1"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </div>
+
+      <button
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Default
+      </button>
+      <button
+        type="button"
+        class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+      >
+        Alternative
+      </button>
+      <button
+        type="button"
+        class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+      >
+        Dark
+      </button>
+      <button
+        type="button"
+        class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+      >
+        Light
+      </button>
+      <button
+        type="button"
+        class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+      >
+        Green
+      </button>
+      <button
+        type="button"
+        class="text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+      >
+        Red
+      </button>
+      <button
+        type="button"
+        class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900"
+      >
+        Yellow
+      </button>
+      <button
+        type="button"
+        class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+      >
+        Purple
+      </button>
+
+      <button
+        type="button"
+        class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Purple to Blue
+      </button>
+      <button
+        type="button"
+        class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Cyan to Blue
+      </button>
+      <button
+        type="button"
+        class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Green to Blue
+      </button>
+      <button
+        type="button"
+        class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Purple to Pink
+      </button>
+      <button
+        type="button"
+        class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Pink to Orange
+      </button>
+      <button
+        type="button"
+        class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Teal to Lime
+      </button>
+      <button
+        type="button"
+        class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+      >
+        Red to Yellow
+      </button>
+
+      <!-- Footer Section -->
+      <footer class="bg-gray-800 text-white mt-auto">
+        <div class="container mx-auto px-4 py-8">
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-4">
+              <h3 class="text-lg font-semibold mb-4">About Us</h3>
+              <p class="text-gray-400">
+                Providing innovative solutions for your needs.
+              </p>
+
+              Chandra Chandra, [27-01-2025 14:40]
+            </div>
+            <div class="md:col-span-4">
+              <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray-400 hover:text-white"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="md:col-span-4">
+              <h3 class="text-lg font-semibold mb-4">Connect With Us</h3>
+              <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <span class="sr-only">Facebook</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <span class="sr-only">Twitter</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white">
+                  <span class="sr-only">LinkedIn</span>
+                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="md:col-span-12">
+              <div class="text-center border-t border-gray-700 pt-8 mt-8">
+                <p class="text-sm text-gray-400">
+                  Copyright 2019, PRACTICE Sites Project. All rights reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-</div>
-<script type="text/javascript" src="/etc.clientlibs/practice/clientlibs/clientlib-site.js"></script>
-<script type="text/javascript" src="/etc.clientlibs/practice/clientlibs/clientlib-base.js"></script>
-</body>
+
+    <!-- Scripts -->
+    <script
+      type="text/javascript"
+      src="/etc.clientlibs/practice/clientlibs/clientlib-site.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="/etc.clientlibs/practice/clientlibs/clientlib-base.js"
+    ></script>
+  </body>
 </html>

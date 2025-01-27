@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-export const content = [
-          "./src/**/*.{html,js,jsx,ts,tsx}",
-          "./src/**/*.{js,jsx,ts,tsx}",
-];
-export const theme = {
-          extend: {},
+export default {
+          content: [
+                    "./src/**/*.{html,js,jsx,ts,tsx}",
+                    "../ui.apps/src/main/content/jcr_root/apps/**/*.html"
+          ],
+          theme: {
+                    extend: {},
+          },
+          plugins: [],
+          corePlugins: {
+                    preflight: false
+          }
 };
-export const plugins = [];

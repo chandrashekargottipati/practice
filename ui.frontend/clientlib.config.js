@@ -1,19 +1,3 @@
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- ~ Copyright 2020 Adobe Systems Incorporated
- ~
- ~ Licensed under the Apache License, Version 2.0 (the "License");
- ~ you may not use this file except in compliance with the License.
- ~ You may obtain a copy of the License at
- ~
- ~     http://www.apache.org/licenses/LICENSE-2.0
- ~
- ~ Unless required by applicable law or agreed to in writing, software
- ~ distributed under the License is distributed on an "AS IS" BASIS,
- ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- ~ See the License for the specific language governing permissions and
- ~ limitations under the License.
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 const path = require('path');
 
 const BUILD_DIR = path.join(__dirname, 'dist');
@@ -37,7 +21,6 @@ const libsBaseConfig = {
   jsProcessor: ['default:none', 'min:none']
 };
 
-// Config for `aem-clientlib-generator`
 module.exports = {
   context: BUILD_DIR,
   clientLibRoot: CLIENTLIB_DIR,
@@ -47,45 +30,42 @@ module.exports = {
       name: 'clientlib-dependencies',
       categories: ['practice.dependencies'],
       assets: {
-        // Copy entrypoint scripts and stylesheets into the respective ClientLib
-        // directories
         js: {
           cwd: 'clientlib-dependencies',
-          files: ['**/*.js'],
+          files: ['/*.js'],
           flatten: false
         },
         css: {
           cwd: 'clientlib-dependencies',
-          files: ['**/*.css'],
+          files: ['/*.css'],
           flatten: false
         }
       }
     },
     {
       ...libsBaseConfig,
-      name: 'clientlib-site',
-      categories: ['practice.site'],
+      name: 'clientlib-base',  // Changed from clientlib-site to clientlib-base
+      categories: ['practice.base'],  // Changed from practice.site to practice.base
       dependencies: ['practice.dependencies'],
       assets: {
-        // Copy entrypoint scripts and stylesheets into the respective ClientLib
-        // directories
         js: {
           cwd: 'clientlib-site',
-          files: ['**/*.js'],
+          files: ['/*.js'],
           flatten: false
         },
         css: {
           cwd: 'clientlib-site',
-          files: ['**/*.css'],
+          files: [
+            '/*.css',
+            '/styles/*.css'  // Add this if your styles are in a subdirectory
+          ],
           flatten: false
         },
-
-        // Copy all other files into the `resources` ClientLib directory
         resources: {
           cwd: 'clientlib-site',
-          files: ['**/*.*'],
+          files: ['/*.*'],
           flatten: false,
-          ignore: ['**/*.js', '**/*.css']
+          ignore: ['/*.js', '**/*.css']
         }
       }
     }

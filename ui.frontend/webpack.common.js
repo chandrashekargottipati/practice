@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-const SOURCE_ROOT = __dirname + '/src/main/webpack';
+const SOURCE_ROOT = path.join(__dirname, 'src/main/webpack');
 
 const resolve = {
     extensions: ['.js', '.ts'],
@@ -19,16 +19,42 @@ const resolve = {
 module.exports = {
     resolve: resolve,
     entry: {
-        site: SOURCE_ROOT + '/site/main.ts'
+        site: path.join(SOURCE_ROOT, 'site/main.ts')
     },
     output: {
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'clientlib-dependencies/[name].js' : 'clientlib-site/[name].js';
+            return chunkData.chunk.name === 'dependencies'
+                ? 'clientlib-dependencies/[name].js'
+                : 'clientlib-site/[name].js';
         },
         path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            url: false,
+                            importLoaders: 1
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: [
+                                    require('tailwindcss'),
+                                    require('autoprefixer')
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
@@ -57,15 +83,16 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins() {
-                                return [
+                            postcssOptions: {
+                                plugins: [
+                                    require('tailwindcss'),
                                     require('autoprefixer')
-                                ];
+                                ]
                             }
                         }
                     },
                     {
-                        loader: 'sass-loader',
+                        loader: 'sass-loader'
                     },
                     {
                         loader: 'glob-import-loader',
@@ -87,7 +114,10 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname, SOURCE_ROOT + '/resources'), to: './clientlib-site/' }
+                {
+                    from: path.resolve(__dirname, SOURCE_ROOT, 'resources'),
+                    to: './clientlib-site/'
+                }
             ]
         })
     ],

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Generates an AEM Frontend project with Webpack",
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": ""
   },
   "private": true,
