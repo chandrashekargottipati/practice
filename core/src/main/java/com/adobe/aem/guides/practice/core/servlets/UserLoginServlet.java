@@ -72,7 +72,7 @@ public class UserLoginServlet extends SlingAllMethodsServlet {
             }
 
             response.setStatus(SlingHttpServletResponse.SC_UNAUTHORIZED);
-            response.getWriter().write("{\"error\": \"Invalid username/email or password\"}");
+            response.getWriter().write("{\"error\": \"Invalid username/email or password\", \"redirect\": \"/content/practice/us/en/register.html\"}");
 
         } catch (SQLException e) {
             LOG.error("Database error", e);
