@@ -1,0 +1,4 @@
+#base=js
+
+login.js
+register.js

@@ -7,3 +7,5 @@ owl.carousel.js
 jqBootstrapValidation.js
 contact.js
 main.js
+categories.js
+productid.js

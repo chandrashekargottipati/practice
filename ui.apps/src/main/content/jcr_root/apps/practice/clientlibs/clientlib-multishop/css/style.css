@@ -9710,3 +9710,54 @@ a.text-dark:hover, a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+
+
+
+
+
+
+
+/* Price Styling */
+.d-flex.align-items-center.justify-content-center.mt-2 h5 {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.text-muted del {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Star Ratings */
+.fa-star, .fa-star-half-alt, .far.fa-star {
+    color: #f39c12;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .col-lg-3, .col-md-4, .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-lg-3, .col-md-4, .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.category-img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.category-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
